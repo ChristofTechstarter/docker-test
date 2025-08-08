@@ -1,6 +1,8 @@
 services:
   frontend:
     build: ./frontend
+    environment: 
+      PUBLIC_IP: ${PUBLIC_IP}
     ports:
       - "5000:80"
     networks:
