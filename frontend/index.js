@@ -1,9 +1,8 @@
 const answer = document.getElementById("answer");
-const ip = process.env.PUBLIC_IP;
 
 function hinzufügen() {
   answer.innerHTML = "";
-  fetch(`http://${ip}:3000/add`, {
+  fetch(`http://${window.PUBLIC_IP}:3000/add`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -16,7 +15,7 @@ function hinzufügen() {
 
 function abrufen() {
   answer.innerHTML = "";
-  fetch(`http://${ip}:3000/all`)
+  fetch(`http://${window.PUBLIC_IP}:3000/all`)
     .then((response) => response.json())
     .then((daten) => {
       const table = document.createElement("table");
